@@ -37,10 +37,12 @@ app = FastAPI(
         {"name": "TripPlan", "description": "AI-powered trip planning"},
         {"name": "Recommendations", "description": "AI-powered recommendations"},
         {"name": "Profile", "description": "User profile management"}
-    ]
+    ],
+    swagger_ui_parameters={"defaultModelsExpandDepth": -1}
 )
 
 # Custom OpenAPI schema generator to remove validation error responses
+"""
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
@@ -63,6 +65,7 @@ def custom_openapi():
     return app.openapi_schema
 
 app.openapi = custom_openapi
+"""
 
 # Enable CORS
 app.add_middleware(
