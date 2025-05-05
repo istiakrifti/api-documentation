@@ -42,7 +42,6 @@ app = FastAPI(
 )
 
 # Custom OpenAPI schema generator to remove validation error responses
-"""
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
@@ -65,7 +64,6 @@ def custom_openapi():
     return app.openapi_schema
 
 app.openapi = custom_openapi
-"""
 
 # Enable CORS
 app.add_middleware(
